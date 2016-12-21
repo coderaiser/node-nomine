@@ -1,0 +1,51 @@
+{
+  "name": "nomine",
+  "version": "1.0.0",
+  "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+  "description": "file renamer as express middleware",
+  "homepage": "http://github.com/coderaiser/node-nomine",
+  "main": "lib/nomine.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coderaiser/node-nomine.git"
+  },
+  "keywords": [
+    "file",
+    "folder",
+    "rename",
+    "group",
+    "name"
+  ],
+  "scripts": {
+    "test": "tape test/*.js",
+    "watcher": "nodemon -w test -w lib --exec",
+    "watch:test": "npm run watcher -- npm test",
+    "watch:coverage": "npm run watcher -- npm run coverage",
+    "lint": "eslint lib test",
+    "build": "redrun clean init 6to5 legacy:*",
+    "init": "mkdirp legacy",
+    "wisdom": "npm run build",
+    "clean": "rimraf legacy dist",
+    "coverage": "nyc npm test",
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "6to5": "buble lib -o legacy/lib",
+    "legacy:index": "echo \"module.exports = require('./lib/nomine');\" > legacy/index.js"
+  },
+  "dependencies": {
+    "es6-promisify": "^5.0.0",
+    "pullout": "^1.0.2",
+    "nomine": "^1.1.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "buble": "^0.14.2",
+    "coveralls": "^2.11.9",
+    "eslint": "^3.10.2",
+    "express": "^4.14.0",
+    "node-fetch": "^1.6.3",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.0.0",
+    "redrun": "^5.9.4",
+    "tape": "^4.5.1"
+  }
+}
