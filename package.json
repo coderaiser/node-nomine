@@ -25,7 +25,7 @@
     "build": "redrun clean init 6to5 legacy:*",
     "init": "mkdirp legacy",
     "wisdom": "npm run build",
-    "clean": "rimraf legacy dist",
+    "clean": "rimraf legacy",
     "coverage": "nyc npm test",
     "report": "nyc report --reporter=text-lcov | coveralls",
     "6to5": "buble lib -o legacy/lib",
