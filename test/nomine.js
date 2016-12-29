@@ -168,7 +168,7 @@ test('rename', (t) => {
 });
 
 test('rename: options: prefix', (t) => {
-    const prefix = '31337';
+    const prefix = '/31337';
     
     before({prefix}, (port, done) => {
         const options = {
@@ -180,7 +180,7 @@ test('rename: options: prefix', (t) => {
             })
         };
         
-        fetch(`http://localhost:${port}/${prefix}`, options)
+        fetch(`http://localhost:${port}${prefix}`, options)
             .then((res) => res.text())
             .then((text) => {
                 t.equal(text, 'rename: ok', 'should send message about names');

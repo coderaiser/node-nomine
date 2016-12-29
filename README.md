@@ -13,7 +13,7 @@ const express = require('express');
 const app = express();
 
 app.use(nomine({
-    prefix: 'rename' // default
+    prefix: '/rename' // default
 });
 
 app.listen(3000, function () {
