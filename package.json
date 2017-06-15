@@ -40,7 +40,7 @@
   "devDependencies": {
     "buble": "^0.15.1",
     "coveralls": "^2.11.9",
-    "eslint": "^3.10.2",
+    "eslint": "^4.0.0",
     "express": "^4.14.0",
     "node-fetch": "^1.6.3",
     "nodemon": "^1.11.0",
