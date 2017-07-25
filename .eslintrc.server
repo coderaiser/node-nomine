@@ -10,6 +10,10 @@
         "indent": ["error", 4]
     },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        "plugin:node/recommended"
+    ],
+    "plugins": [
+        "node"
     ]
 }

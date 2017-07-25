@@ -5,6 +5,9 @@
   "description": "file rename as express middleware",
   "homepage": "http://github.com/coderaiser/node-nomine",
   "main": "lib/nomine.js",
+  "engines": {
+    "node": ">=4"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/coderaiser/node-nomine.git"
@@ -21,7 +24,9 @@
     "watcher": "nodemon -w test -w lib --exec",
     "watch:test": "npm run watcher -- npm test",
     "watch:coverage": "npm run watcher -- npm run coverage",
-    "lint": "eslint lib test",
+    "lint:lib": "eslint -c .eslintrc.server lib",
+    "lint:test": "eslint test",
+    "lint": "redrun lint:*",
     "build": "redrun clean init 6to5 legacy:*",
     "init": "mkdirp legacy",
     "wisdom": "npm run build",
@@ -41,6 +46,7 @@
     "buble": "^0.15.1",
     "coveralls": "^2.11.9",
     "eslint": "^4.0.0",
+    "eslint-plugin-node": "^5.1.1",
     "express": "^4.14.0",
     "node-fetch": "^1.6.3",
     "nodemon": "^1.11.0",
