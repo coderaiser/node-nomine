@@ -1,6 +1,6 @@
 {
   "name": "nomine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "file rename as express middleware",
   "homepage": "http://github.com/coderaiser/node-nomine",
