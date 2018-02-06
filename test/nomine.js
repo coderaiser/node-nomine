@@ -6,8 +6,16 @@ const fs = require('fs');
 const test = require('tape');
 const fetch = require('node-fetch');
 
+const nomine = require('..');
 const before = require('./before');
 const {stringify} = JSON;
+
+test('no options', (t) => {
+    const result = nomine();
+    
+    t.equal(typeof result, 'function', 'should return function');
+    t.end();
+});
 
 test('not found', (t) => {
     before((port, done) => {
