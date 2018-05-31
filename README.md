@@ -43,14 +43,6 @@ $ curl -X PUT -d '{"dir":"/","from":["bin"], "to": ["bin2"]}' http://localhost:3
 EACCES: permission denied, rename '/bin' -> '/bin2'
 ```
 
-## Environments
-
-In old `node.js` environments that not fully supports `es2015`, `nomine` could be used with:
-
-```js
-var nomine = require('nomine/legacy');
-```
-
 ## Related
 
 - [Renamify](https://github.com/coderaiser/node-renamify "Renamify") - rename group of files from a directory

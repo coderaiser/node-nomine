@@ -27,14 +27,8 @@
     "lint:lib": "eslint -c .eslintrc.server lib",
     "lint:test": "eslint test",
     "lint": "redrun lint:*",
-    "build": "redrun clean init 6to5 legacy:*",
-    "init": "mkdirp legacy",
-    "wisdom": "npm run build",
-    "clean": "rimraf legacy",
     "coverage": "nyc npm test",
-    "report": "nyc report --reporter=text-lcov | coveralls",
-    "6to5": "buble lib -o legacy/lib",
-    "legacy:index": "echo \"module.exports = require('./lib/nomine');\" > legacy/index.js"
+    "report": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "es6-promisify": "^6.0.0",
@@ -43,7 +37,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "buble": "^0.19.2",
     "coveralls": "^3.0.0",
     "eslint": "^4.0.0",
     "eslint-plugin-node": "^6.0.0",
