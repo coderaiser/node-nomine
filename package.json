@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "es6-promisify": "^6.0.0",
-    "pullout": "^1.0.2",
+    "pullout": "^2.0.0",
     "renamify": "^2.0.0"
   },
   "license": "MIT",
