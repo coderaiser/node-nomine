@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "pullout": "^2.0.0",
-    "renamify": "^2.0.0"
+    "renamify": "^3.0.1"
   },
   "license": "MIT",
   "devDependencies": {
