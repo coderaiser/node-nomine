@@ -6,7 +6,7 @@
   "homepage": "http://github.com/coderaiser/node-nomine",
   "main": "lib/nomine.js",
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,6 @@
     "report": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "es6-promisify": "^6.0.0",
     "pullout": "^2.0.0",
     "renamify": "^2.0.0"
   },
