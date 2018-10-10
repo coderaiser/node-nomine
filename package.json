@@ -37,7 +37,7 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.1",
-    "eslint": "^4.0.0",
+    "eslint": "^5.6.1",
     "eslint-plugin-node": "^6.0.1",
     "express": "^4.14.0",
     "node-fetch": "^2.1.2",
