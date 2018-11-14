@@ -31,7 +31,7 @@
     "report": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "pullout": "^2.0.0",
+    "pullout": "^3.0.0",
     "renamify": "^3.0.1"
   },
   "license": "MIT",
