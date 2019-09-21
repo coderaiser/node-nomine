@@ -6,7 +6,7 @@
   "homepage": "http://github.com/coderaiser/node-nomine",
   "main": "lib/nomine.js",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "repository": {
     "type": "git",
