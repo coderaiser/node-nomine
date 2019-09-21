@@ -5,3 +5,6 @@ coverage
 
 *.swp
 
+madrun.js
+yarn-error.log
+

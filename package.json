@@ -20,15 +20,15 @@
     "name"
   ],
   "scripts": {
-    "test": "tape test/*.js",
-    "watcher": "nodemon -w test -w lib --exec",
-    "watch:test": "npm run watcher -- npm test",
-    "watch:coverage": "npm run watcher -- npm run coverage",
-    "lint:lib": "eslint -c .eslintrc.server lib",
-    "lint:test": "eslint test",
-    "lint": "redrun lint:*",
-    "coverage": "nyc npm test",
-    "report": "nyc report --reporter=text-lcov | coveralls"
+    "test": "madrun test",
+    "watcher": "madrun watcher",
+    "watch:test": "madrun watch:test",
+    "watch:coverage": "madrun watch:coverage",
+    "lint": "madrun lint",
+    "lint:test": "madrun lint:test",
+    "fix:lint": "madrun fix:lint",
+    "coverage": "madrun coverage",
+    "report": "madrun report"
   },
   "dependencies": {
     "pullout": "^4.0.0",
@@ -38,11 +38,15 @@
   "devDependencies": {
     "coveralls": "^3.0.1",
     "eslint": "^6.4.0",
-    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-putout": "^2.0.0",
     "express": "^4.14.0",
+    "madrun": "^3.0.5",
     "node-fetch": "^2.1.2",
     "nodemon": "^1.11.0",
     "nyc": "^14.1.1",
-    "serve-once": "^1.5.0"
+    "putout": "^6.1.0",
+    "serve-once": "^1.5.0",
+    "supertape": "^1.2.3"
   }
 }

@@ -3,7 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const test = require('tape');
+const test = require('supertape');
 
 const nomine = require('..');
 const {request} = require('serve-once')(nomine);
@@ -16,14 +16,14 @@ test('no options', (t) => {
 });
 
 test('not found', async (t) => {
-    const {status} = await request.get('/')
+    const {status} = await request.get('/');
     
     t.equal(status, 404, 'should not found');
     t.end();
 });
 
 test('wrong method', async (t) => {
-    const {body} = await request.get(`/rename`)
+    const {body} = await request.get(`/rename`);
     t.equal(body, 'method should be PUT', 'should send message');
     t.end();
 });
@@ -31,7 +31,7 @@ test('wrong method', async (t) => {
 test('put args: no dir', async (t) => {
     const {body} = await request.put(`/rename`, {
         body: {},
-    })
+    });
     
     t.equal(body, 'dir should be a string!', 'should send message about dir');
     t.end();
@@ -40,9 +40,9 @@ test('put args: no dir', async (t) => {
 test('put args: no from', async (t) => {
     const {body} = await request.put(`/rename`, {
         body: {
-            dir: '/hello'
-        }
-    })
+            dir: '/hello',
+        },
+    });
     
     t.equal(body, 'from should be an array!', 'should send message about names');
     t.end();
@@ -52,9 +52,9 @@ test('put args: no from', async (t) => {
     const {body} = await request.put(`/rename`, {
         body: {
             dir: '/hello',
-            from: []
-        }
-    })
+            from: [],
+        },
+    });
     
     t.equal(body, 'to should be an array!', 'should send message about names');
     t.end();
@@ -65,9 +65,9 @@ test('rename: empty', async (t) => {
         body: {
             dir: '/hello',
             from: [],
-            to: []
-        }
-    })
+            to: [],
+        },
+    });
     
     t.equal(body, 'rename: ok', 'should send message about names');
     t.end();
@@ -78,12 +78,12 @@ test('rename: error', async (t) => {
         body: {
             dir: '/',
             from: ['bin'],
-            to: ['hello']
-        }
-    })
+            to: ['hello'],
+        },
+    });
     
     const expected = 'EACCES: permission denied, rename \'/bin\' -> \'/hello\'';
-     
+    
     t.equal(body, expected, 'should send error');
     t.end();
 });
@@ -103,9 +103,9 @@ test('rename', async (t) => {
         body: {
             dir,
             from,
-            to
-        }
-    })
+            to,
+        },
+    });
     
     const oldNames = from.map(addDir);
     
@@ -130,9 +130,9 @@ test('rename: options: prefix', async (t) => {
         body: {
             dir: '/hello',
             from: [],
-            to: []
-        }
-    })
+            to: [],
+        },
+    });
     
     t.equal(body, 'rename: ok', 'should send message about names');
     t.end();
