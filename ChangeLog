@@ -1,3 +1,22 @@
+2026.10.24, v5.0.0
+
+feature:
+- 82b2625 migrate to ESM
+- e86d893 nomine: c8 v12.0.0
+- f1f4295 nomine: supertape v13.6.2
+- 2808b7a nomine: serve-once v4.0.1
+- f080026 nomine: renamify v5.0.0
+- 9469cb0 nomine: putout v42.22.1
+- a2ba183 nomine: pullout v5.0.1
+- e8dd94a nomine: nyc v18.0.0
+- ca11ec7 nomine: nodemon v3.1.14
+- 66316f2 nomine: node-fetch v3.3.2
+- 0441806 nomine: madrun v13.0.4
+- b585779 nomine: express v5.3.0
+- ef9f49f nomine: eslint-plugin-putout v31.4.2
+- adc9513 nomine: eslint-plugin-node v11.1.0
+- abc6028 nomine: eslint v10.13.0
+
 2019.09.21, v4.0.0
 
 feature:
