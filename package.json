@@ -43,7 +43,6 @@
     "eslint-plugin-putout": "^31.4.2",
     "express": "^5.3.0",
     "madrun": "^13.0.4",
-    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.14",
     "putout": "^42.22.1",
     "serve-once": "^4.0.1",
