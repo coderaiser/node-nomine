@@ -7,6 +7,6 @@ export default {
     'watch:coverage': () => run('watcher', 'npm run coverage'),
     'lint': () => 'putout lib test madrun.js',
     'fix:lint': () => run('lint', '--fix'),
-    'coverage': () => 'nyc npm test',
-    'report': () => 'nyc report --reporter=text-lcov | coveralls',
+    'coverage': () => 'c8 npm test',
+    'report': () => 'c8 report --reporter=text-lcov | coveralls',
 };
