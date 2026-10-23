@@ -48,6 +48,6 @@
     "nyc": "^18.0.0",
     "putout": "^42.22.1",
     "serve-once": "^4.0.1",
-    "supertape": "^1.2.3"
+    "supertape": "^13.6.2"
   }
 }
