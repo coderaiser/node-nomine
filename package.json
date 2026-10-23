@@ -1,12 +1,13 @@
 {
   "name": "nomine",
   "version": "4.0.0",
+  "type": "module",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "file rename as express middleware",
   "homepage": "http://github.com/coderaiser/node-nomine",
   "main": "lib/nomine.js",
   "engines": {
-    "node": ">=10"
+    "node": ">=22"
   },
   "repository": {
     "type": "git",
@@ -37,7 +38,7 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.1",
-    "eslint": "^6.4.0",
+    "eslint": "^10.13.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-putout": "^2.0.0",
     "express": "^4.14.0",
