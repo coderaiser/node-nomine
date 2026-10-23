@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {test} from 'supertape';
 import {serveOnce} from 'serve-once';
-import nomine from '../lib/nomine.js';
+import {nomine} from '../lib/nomine.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

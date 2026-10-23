@@ -20,6 +20,7 @@ File rename as express middleware.
 
 ```js
 import express from 'express';
+import {nodemine} from 'nomine';
 
 const app = express();
 
