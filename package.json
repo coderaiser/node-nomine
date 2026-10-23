@@ -32,7 +32,7 @@
     "report": "madrun report"
   },
   "dependencies": {
-    "pullout": "^4.0.0",
+    "pullout": "^5.0.1",
     "renamify": "^3.0.1"
   },
   "license": "MIT",
