@@ -13,10 +13,10 @@ const express = require('express');
 const app = express();
 
 app.use(nomine({
-    prefix: '/rename' // default
-});
+    prefix: '/rename', // default
+}));
 
-app.listen(3000, function () {
+app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
 });
 ```
@@ -29,12 +29,8 @@ Payload could look this way:
 ```json
 {
     "dir": "/",
-    "from": [
-        "bin"
-    ],
-    "to": [
-        "bin2"
-    ]
+    "from": ["bin"],
+    "to": ["bin2"]
 }
 ```
 
@@ -51,15 +47,12 @@ EACCES: permission denied, rename '/bin' -> '/bin2'
 
 MIT
 
-[NPMIMGURL]:                https://img.shields.io/npm/v/nomine.svg?style=flat
-[BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/node-nomine/master.svg?style=flat
-[DependencyStatusIMGURL]:   https://img.shields.io/david/coderaiser/node-nomine.svg?style=flat
-[LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
-[NPMURL]:                   https://npmjs.org/package/nomine "npm"
-[BuildStatusURL]:           https://travis-ci.org/coderaiser/node-nomine  "Build Status"
-[DependencyStatusURL]:      https://david-dm.org/coderaiser/node-nomine "Dependency Status"
-[LicenseURL]:               https://tldrlegal.com/license/mit-license "MIT License"
-
-[CoverageURL]:              https://coveralls.io/github/coderaiser/node-nomine?branch=master
-[CoverageIMGURL]:           https://coveralls.io/repos/coderaiser/node-nomine/badge.svg?branch=master&service=github
-
+[NPMIMGURL]: https://img.shields.io/npm/v/nomine.svg?style=flat
+[BuildStatusIMGURL]: https://img.shields.io/travis/coderaiser/node-nomine/master.svg?style=flat
+[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
+[NPMURL]: https://npmjs.org/package/nomine "npm"
+[BuildStatusURL]: https://travis-ci.org/coderaiser/node-nomine "Build Status"
+[DependencyStatusURL]: https://david-dm.org/coderaiser/node-nomine "Dependency Status"
+[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
+[CoverageURL]: https://coveralls.io/github/coderaiser/node-nomine?branch=master
+[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/node-nomine/badge.svg?branch=master&service=github

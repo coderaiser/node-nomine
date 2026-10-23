@@ -1,8 +1,6 @@
-'use strict';
+import {run} from 'madrun';
 
-const {run} = require('madrun');
-
-module.exports = {
+export default {
     'test': () => 'tape test/*.js',
     'watcher': () => 'nodemon -w test -w lib --exec',
     'watch:test': () => run('watcher', 'npm test'),
@@ -12,4 +10,3 @@ module.exports = {
     'coverage': () => 'nyc npm test',
     'report': () => 'nyc report --reporter=text-lcov | coveralls',
 };
-
