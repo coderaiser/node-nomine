@@ -7,7 +7,10 @@ import {nomine} from '../lib/nomine.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const fixtureDir = path.join(__dirname, 'fixture', 'two');
 const {request} = serveOnce(nomine);
+const {request: requestRoot} = serveOnce(nomine, {root: fixtureDir});
+const {request: requestRootTrailing} = serveOnce(nomine, {root: fixtureDir + '/'});
 
 test('nomine: no options', (t) => {
     const result = nomine();
@@ -144,5 +147,77 @@ test('rename: options: prefix', async (t) => {
     });
     
     t.equal(body, 'rename: ok', 'should send message about names');
+    t.end();
+});
+
+test('nomine: root: traversal in from: status 404', async (t) => {
+    const {status} = await requestRoot.put('/rename', {
+        body: {dir: fixtureDir, from: ['../outside.txt'], to: ['1.txt']},
+    });
+    
+    t.equal(status, 404);
+    t.end();
+});
+
+test('nomine: root: traversal in from: body contains beyond root', async (t) => {
+    const {body} = await requestRoot.put('/rename', {
+        body: {dir: fixtureDir, from: ['../outside.txt'], to: ['1.txt']},
+    });
+    
+    t.ok(body.includes('beyond root'), `got: ${body}`);
+    t.end();
+});
+
+test('nomine: root: traversal in to: status 404', async (t) => {
+    const {status} = await requestRoot.put('/rename', {
+        body: {dir: fixtureDir, from: ['1.txt'], to: ['../escaped.txt']},
+    });
+    
+    t.equal(status, 404);
+    t.end();
+});
+
+test('nomine: root: traversal in to: body contains beyond root', async (t) => {
+    const {body} = await requestRoot.put('/rename', {
+        body: {dir: fixtureDir, from: ['1.txt'], to: ['../escaped.txt']},
+    });
+    
+    t.ok(body.includes('beyond root'), `got: ${body}`);
+    t.end();
+});
+
+test('nomine: root: absolute path outside root: status 404', async (t) => {
+    const {status} = await requestRoot.put('/rename', {
+        body: {dir: fixtureDir, from: ['/etc/passwd'], to: ['/tmp/stolen']},
+    });
+    
+    t.equal(status, 404);
+    t.end();
+});
+
+test('nomine: root: absolute path outside root: body contains beyond root', async (t) => {
+    const {body} = await requestRoot.put('/rename', {
+        body: {dir: fixtureDir, from: ['/etc/passwd'], to: ['/tmp/stolen']},
+    });
+    
+    t.ok(body.includes('beyond root'), `got: ${body}`);
+    t.end();
+});
+
+test('nomine: root: valid rename within root: ok', async (t) => {
+    const {body} = await requestRoot.put('/rename', {
+        body: {dir: fixtureDir, from: ['1.txt'], to: ['2.txt']},
+    });
+    
+    t.equal(body, 'rename: ok');
+    t.end();
+});
+
+test('nomine: root: trailing slash on root: ok', async (t) => {
+    const {body} = await requestRootTrailing.put('/rename', {
+        body: {dir: fixtureDir, from: ['2.txt'], to: ['1.txt']},
+    });
+    
+    t.equal(body, 'rename: ok');
     t.end();
 });
