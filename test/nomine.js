@@ -84,7 +84,7 @@ test('rename: error', async (t) => {
         },
     });
     
-    const expected = `EPERM: operation not permitted, rename '/bin' -> '/hello'`;
+    const expected = `EACCES: permission denied, rename '/bin' -> '/hello'`;
     
     t.equal(body, expected, 'should send error');
     t.end();
